@@ -6,59 +6,114 @@
     <title>Guess the Number</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        .game-container {
-            background-color: #f0f8ff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            margin-top: 150px;
-            margin-left: 510px;
-            text-align: center;
+        body {
+            background-color: #ffebee; /* Latar belakang berwarna pink lembut */
+            font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Font yang lucu dan playful */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 20px; /* Tambahan padding untuk tampilan mobile */
         }
 
-        input[type="number"] {
+        .game-container {
+            background-color: #ffffff; /* Latar belakang putih untuk kontras */
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 380px;
+            width: 100%;
+            border: 5px solid #ff80ab; /* Border pink cerah */
+            transition: transform 0.3s ease;
+        }
+
+        .game-container:hover {
+            transform: scale(1.05); /* Efek hover yang playful */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #ff4081; /* Warna cerah untuk judul */
+            text-shadow: 2px 2px #ff80ab; /* Bayangan teks untuk efek yang lebih ceria */
+        }
+
+        #question {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #8e24aa; /* Warna ungu untuk teks pertanyaan */
+        }
+
+        #answer {
             padding: 10px;
             font-size: 1rem;
-            border: 2px solid #ccc;
-            border-radius: 5px;
+            width: 80%;
+            max-width: 120px;
+            border: 2px solid #ffcc80; /* Border warna oranye cerah */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #answer:focus {
+            border-color: #ff7043; /* Warna border berubah saat fokus */
         }
 
         button {
-            padding: 10px 20px;
+            padding: 5px 24px;
             font-size: 1rem;
+            background-color: #ffb74d; /* Warna oranye cerah untuk tombol */
+            color: #ffffff;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
+            border-radius: 10px;
             cursor: pointer;
-            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.2s;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #ffa726; /* Warna tombol berubah saat hover */
+            transform: translateY(-2px); /* Efek hover agar tombol terangkat */
         }
 
-        #result {
-            font-size: 1.2rem;
-            font-weight: bold;
+        .hidden {
+            display: none;
+        }
+
+        #feedback {
             margin-top: 20px;
+            font-size: 1.2rem;
+            color: #d32f2f; /* Warna merah untuk feedback */
         }
 
-        #attempts {
-            font-size: 1rem;
-            color: #555;
-            margin-top: 10px;
-        }
+        /* Media Query untuk Perangkat Mobile */
+        @media (max-width: 768px) {
+            .game-container {
+                padding: 15px;
+            }
 
+            h1 {
+                font-size: 2rem; /* Ukuran font disesuaikan untuk perangkat kecil */
+            }
+
+            #question {
+                font-size: 1.3rem;
+            }
+
+            #answer, button {
+                width: 100%; /* Lebar input dan tombol disesuaikan untuk perangkat kecil */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="game-container">
         <h1>Tebak angka!</h1>
-        <p>Tebak angka dari 1 dan 10:</p>
+        <p>Tebak angka dari 1-10:</p>
         <input type="number" id="guessInput" min="1" max="10">
-        <button id="guessButton">Submit Guess</button>
+        <button id="guessButton">Submit</button>
         <p id="result"></p>
         <p id="attempts"></p>
         <a href="game.html" class="button">Kembali ke Menu Game</a>

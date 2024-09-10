@@ -1,55 +1,73 @@
 body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    background-color: #fce4ec; /* Latar belakang berwarna pink lembut */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Font yang lucu dan playful */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0 20px; /* Padding untuk menghindari konten menempel di tepi layar di perangkat mobile */
 }
 
 .game-container {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    max-width: 400px;
+    width: 100%;
+    border: 5px solid #ff80ab; /* Border dengan warna yang menarik */
+    transition: transform 0.3s ease;
 }
 
-.game-over {
-    background-color: red;
-    opacity: 0.8;
-  }
+.game-container:hover {
+    transform: scale(1.02); /* Efek hover yang lucu */
+}
 
 h1 {
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #ff4081; /* Warna judul yang cerah */
+    text-shadow: 2px 2px #ff80ab; /* Bayangan teks agar terlihat lebih menarik */
 }
 
 #question {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #8e24aa; /* Warna teks pertanyaan yang cerah */
 }
 
 #answer {
     padding: 10px;
     font-size: 1rem;
-    width: 100px;
+    width: 80%;
+    max-width: 120px;
+    border: 2px solid #8c9eff; /* Border input dengan warna cerah */
+    border-radius: 10px;
     margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#answer:focus {
+    border-color: #536dfe; /* Warna border berubah saat fokus */
 }
 
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: #7e57c2; /* Warna tombol yang cerah */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #5e35b1; /* Warna tombol berubah saat hover */
+    transform: translateY(-2px); /* Efek hover agar tombol terangkat sedikit */
 }
 
 .hidden {
@@ -59,4 +77,24 @@ button:hover {
 #feedback {
     margin-top: 20px;
     font-size: 1.2rem;
+    color: #d32f2f; /* Warna teks feedback */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Ukuran font disesuaikan untuk perangkat kecil */
+    }
+
+    #question {
+        font-size: 1.3rem;
+    }
+
+    #answer, button {
+        width: 90%; /* Lebar input dan tombol disesuaikan untuk perangkat kecil */
+    }
 }

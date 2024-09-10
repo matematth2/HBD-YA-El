@@ -18,7 +18,7 @@ body {
 
 h1 {
     font-size: 3.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #ff80ab; /* Warna cerah untuk judul */
     text-shadow: 2px 2px #ffccbc; /* Bayangan teks untuk efek yang lebih ceria */
     animation: fadeIn 2s ease-in-out;

@@ -1,66 +1,119 @@
 body {
   text-align: center;
-  background-color: #f4f4f4;
-  color: black;
+  background: linear-gradient(135deg, #fce38a, #f38181); /* Colorful gradient background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
 }
 
 #level-title {
-  font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
-  margin:  3%;
-  color: #333;
+  margin: 3%;
+  color: #4a47a3; /* Fun purple color */
+  text-shadow: 2px 2px #ffe156; /* Yellow shadow for a playful effect */
 }
 
 .container {
-  display: block;
-  width: 50%;
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: center; /* Center the buttons */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Max width for larger screens */
   margin: auto;
-
+  padding: 10px;
 }
 
 .btn {
-  margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+  margin: 15px;
+  height: 150px;
+  width: 150px;
+  border: 5px solid #fff; /* White border for contrast */
+  border-radius: 50%; /* Rounded buttons for a fun look */
   cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
-.game-over {
-  background-color: red;
-  opacity: 0.8;
+.btn:hover {
+  transform: translateY(-5px) scale(1.05); /* Lift and scale on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
 }
 
 .red {
-  background-color: red;
+  background-color: #ff6b6b; /* Bright red */
 }
 
 .green {
-  background-color: green;
+  background-color: #9aed8e; /* Light green */
 }
 
 .blue {
-  background-color: blue;
+  background-color: #6a8caf; /* Light blue */
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: #ffd93d; /* Bright yellow */
 }
 
 #play {
-  background-color:#FEF2BF;
-  color: black;
-  border-radius: 10px;
+  background-color: #ffe156; /* Bright yellow button */
+  color: #333;
+  border: none;
+  border-radius: 25px; /* Rounded button */
   text-align: center;
   font-weight: bold;
-  width: 100px;
-  height: 30px;
+  width: 120px;
+  height: 40px;
   cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+#play:hover {
+  background-color: #ffbf00; /* Darker yellow on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
 .pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* White glow effect */
+  background-color: #b0bec5; /* Softer grey when pressed */
+}
+
+.game-over {
+  background-color: #ff5252;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #level-title {
+    font-size: 1.8rem; /* Adjust font size for medium screens */
+  }
+
+  .btn {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #level-title {
+    font-size: 1.5rem; /* Adjust font size for small screens */
+  }
+
+  .btn {
+    height: 90px;
+    width: 90px;
+    margin: 8px;
+  }
+
+  #play {
+    width: 100px;
+    height: 35px;
+    font-size: 0.8rem; /* Adjust button size and font for smaller devices */
+  }
 }

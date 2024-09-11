@@ -67,3 +67,46 @@ p {
     60% { transform: scale(1.2); opacity: 1; }
     100% { transform: scale(1); }
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .landing-container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .buttons-container {
+        gap: 10px;
+    }
+}

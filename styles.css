@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.rem;
     margin-bottom: -40px;
     color: #ff80ab; /* Warna cerah untuk judul */
     text-shadow: 2px 2px #ffccbc; /* Bayangan teks untuk efek yang lebih ceria */
@@ -33,7 +33,7 @@ h1 {
 
 .present {
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     width: 100%;
     transition: transform 0.5s ease-in-out;
